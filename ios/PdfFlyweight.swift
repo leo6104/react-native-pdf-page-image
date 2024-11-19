@@ -115,7 +115,7 @@ class PdfFlyweight {
             // Dibujar la página en el contexto
             context.cgContext.saveGState()
             context.cgContext.translateBy(x: 0, y: scaledSize.height)
-            context.cgContext.scaleBy(x: 1.0, y: -1.0) // Invertir la imagen en el eje y
+            context.cgContext.scaleBy(x: scale, y: -scale) // Invertir la imagen en el eje y
             
             // Especificar claramente cómo debe manejarse el renderizado del PDF
             pdfPage.draw(with: .mediaBox, to: context.cgContext)
